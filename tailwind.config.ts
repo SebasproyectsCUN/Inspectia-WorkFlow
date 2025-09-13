@@ -22,10 +22,28 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          hover: "hsl(var(--primary-hover))",
+          light: "hsl(var(--primary-light))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
+          hover: "hsl(var(--secondary-hover))",
+        },
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
+          light: "hsl(var(--success-light))",
+        },
+        warning: {
+          DEFAULT: "hsl(var(--warning))",
+          foreground: "hsl(var(--warning-foreground))",
+          light: "hsl(var(--warning-light))",
+        },
+        danger: {
+          DEFAULT: "hsl(var(--danger))",
+          foreground: "hsl(var(--danger-foreground))",
+          light: "hsl(var(--danger-light))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -56,6 +74,16 @@ export default {
           "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
+        },
+        kanban: {
+          backlog: "hsl(var(--kanban-backlog))",
+          "backlog-accent": "hsl(var(--kanban-backlog-accent))",
+          progress: "hsl(var(--kanban-progress))",
+          "progress-accent": "hsl(var(--kanban-progress-accent))",
+          stopped: "hsl(var(--kanban-stopped))",
+          "stopped-accent": "hsl(var(--kanban-stopped-accent))",
+          completed: "hsl(var(--kanban-completed))",
+          "completed-accent": "hsl(var(--kanban-completed-accent))",
         },
       },
       borderRadius: {
