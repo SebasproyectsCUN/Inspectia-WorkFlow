@@ -71,7 +71,7 @@ const ProjectKanban = () => {
   // Form states
   const [taskName, setTaskName] = useState('');
   const [taskDescription, setTaskDescription] = useState('');
-  const [taskAssignedTo, setTaskAssignedTo] = useState('');
+  const [taskAssignedTo, setTaskAssignedTo] = useState('unassigned');
   const [taskStartDate, setTaskStartDate] = useState('');
   const [taskEndDate, setTaskEndDate] = useState('');
 
@@ -175,7 +175,7 @@ const ProjectKanban = () => {
             project_id: projectId,
             name: taskName,
             description: taskDescription,
-            assigned_to: taskAssignedTo || null,
+            assigned_to: taskAssignedTo === 'unassigned' ? null : taskAssignedTo,
             start_date: taskStartDate || null,
             end_date: taskEndDate || null,
             created_by: user?.id,
@@ -206,7 +206,7 @@ const ProjectKanban = () => {
       setTasks([...tasks, taskWithProfile]);
       setTaskName('');
       setTaskDescription('');
-      setTaskAssignedTo('');
+      setTaskAssignedTo('unassigned');
       setTaskStartDate('');
       setTaskEndDate('');
       setIsCreateTaskOpen(false);
@@ -350,7 +350,7 @@ const ProjectKanban = () => {
                           <SelectValue placeholder="Seleccionar usuario" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="">Sin asignar</SelectItem>
+                          <SelectItem value="unassigned">Sin asignar</SelectItem>
                           {members.map((member) => (
                             <SelectItem key={member.user_id} value={member.user_id}>
                               {member.profiles.full_name}
